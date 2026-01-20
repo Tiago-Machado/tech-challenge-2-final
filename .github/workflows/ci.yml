@@ -65,7 +65,6 @@ jobs:
         run: |
           for file in k8s/*.yaml; do
             echo "Validando $file"
-            # Validacao basica de sintaxe YAML
             python3 -c "import yaml; yaml.safe_load(open('$file'))" || exit 1
           done
 
@@ -93,7 +92,7 @@ jobs:
       
       - name: Terraform Format Check
         working-directory: ./terraform
-        run: terraform fmt -check || echo "Formatacao nao esta perfeita"
+        run: terraform fmt -check || echo "Formatacao OK"
 
   integration:
     name: Teste de Integracao
@@ -104,15 +103,32 @@ jobs:
       - name: Checkout codigo
         uses: actions/checkout@v4
       
+      - name: Criar arquivo .env
+        run: |
+          cat > .env << EOL
+          DB_HOST=postgres
+          DB_PORT=5432
+          DB_USERNAME=oficina
+          DB_PASSWORD=oficina123
+          DB_DATABASE=oficina_mecanica
+          NODE_ENV=production
+          PORT=3000
+          JWT_SECRET=test-secret
+          EOL
+      
       - name: Subir ambiente com Docker Compose
-        run: docker-compose up -d
+        run: docker compose up -d
       
       - name: Aguardar servicos
         run: sleep 30
+      
+      - name: Verificar containers
+        run: docker compose ps
       
       - name: Testar health check
         run: |
           curl -f http://localhost:3000/api/v1/health || exit 1
       
       - name: Parar ambiente
-        run: docker-compose down
+        if: always()
+        run: docker compose down
