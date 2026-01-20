@@ -4,7 +4,7 @@ Projeto desenvolvido para o Tech Challenge da FIAP, implementando um sistema com
 
 ## Sobre o Projeto
 
-Este sistema permite gerenciar clientes, veiculos, serviços, peças e ordens de serviço de uma oficina mecanica. Foi desenvolvido seguindo os principios de Clean Architecture para garantir manutenibilidade e escalabilidade.
+Este sistema permite gerenciar clientes, veiculos, serviços, peças e ordens de serviço de uma oficina mecanica. Foi desenvolvido seguindo os principios de Clean Architecture para garantir manutenção e escalabilidade.
 
 ## Tecnologias Utilizadas
 
