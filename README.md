@@ -171,3 +171,27 @@ Este projeto foi desenvolvido para fins educacionais como parte do Tech Challeng
 ## Autor
 
 Tiago Machado
+
+## Arquitetura
+
+Para detalhes completos da arquitetura, veja [ARQUITETURA.md](./ARQUITETURA.md)
+
+## Collection das APIs
+
+A documentação completa das APIs está disponível via Swagger:
+
+**URL local:** http://localhost:3000/api/docs
+
+Principais endpoints:
+- `GET /api/v1/health` - Health check
+- `GET /api/v1/clientes` - Listar clientes
+- `POST /api/v1/clientes` - Criar cliente
+- `GET /api/v1/veiculos` - Listar veiculos
+- `POST /api/v1/veiculos` - Criar veiculo
+- `GET /api/v1/ordens-servico` - Listar ordens de serviço
+- `POST /api/v1/ordens-servico` - Criar ordem de serviço
+
+## Video Demonstrativo
+
+[Link sera adicionado apos gravacao]
+
