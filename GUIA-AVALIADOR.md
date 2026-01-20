@@ -128,6 +128,6 @@ kubectl rollout restart deployment oficina-mecanica-api -n oficina-mecanica
 
 ## Observações
 
-O projeto esta completo e funcional. Todos os requisitos do Tech Challenge foram implementados.
+
 
 Qualquer duvida pode entrar em contato.
