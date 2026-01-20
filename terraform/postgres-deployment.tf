@@ -2,7 +2,7 @@ resource "kubernetes_deployment" "postgres" {
   metadata {
     name      = "${var.app_name}-postgres"
     namespace = kubernetes_namespace.oficina.metadata[0].name
-    
+
     labels = {
       app = "postgres"
     }

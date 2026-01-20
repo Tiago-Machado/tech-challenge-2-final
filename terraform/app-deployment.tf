@@ -2,7 +2,7 @@ resource "kubernetes_deployment" "app" {
   metadata {
     name      = var.app_name
     namespace = kubernetes_namespace.oficina.metadata[0].name
-    
+
     labels = {
       app = var.app_name
     }

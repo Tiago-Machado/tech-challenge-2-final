@@ -40,7 +40,7 @@ resource "kubernetes_horizontal_pod_autoscaler_v2" "app" {
       scale_up {
         stabilization_window_seconds = 30
         select_policy                = "Max"
-        
+
         policy {
           type           = "Percent"
           value          = 50
@@ -51,7 +51,7 @@ resource "kubernetes_horizontal_pod_autoscaler_v2" "app" {
       scale_down {
         stabilization_window_seconds = 300
         select_policy                = "Min"
-        
+
         policy {
           type           = "Percent"
           value          = 10
