@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oficina-mecanica-config
+  namespace: oficina-mecanica
+data:
+  NODE_ENV: "production"
+  DB_HOST: "oficina-postgres-service"
+  DB_PORT: "5432"
+  DB_DATABASE: "oficina_mecanica"
+  DB_USERNAME: "oficina"
+  PORT: "3000"
